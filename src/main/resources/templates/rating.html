@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Киноман</title>
+  <link rel="stylesheet" th:href="@{/styles.css}">
+  <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+</head>
+<body>
+<div class="header">
+  <h1 id="string1">Киноман</h1>
+</div>
+
+<div class="topnav">
+  <a th:href="@{/}" class="topnav">Рецензии</a>
+  <a th:href="@{/news}" class="topnav">Новости</a>
+  <a th:href="@{/rating}" class="topnav">Рейтинг фильмов</a>
+  <a th:href="@{/poster}" class="topnav">Афиша</a>
+  <a th:href="@{/enter}" class="topnav" id="enter">Войти</a>
+</div>
+
+<table class="table" style="width:100%">
+  <tr class="raiting">
+    <th class="table1">Фильм</th>
+    <th class="table1">Рейтинг</th>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">1. Побег из Шоушенка (1994)</td>
+    <td class="raiting">9.191 (482 972)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">2. Зеленая миля (1999)</td>
+    <td class="raiting">9.134 (452 180)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">3. Форрест Гамп (1994)</td>
+    <td class="raiting">9.013 (442 015)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">4. Список Шиндлера (1993)</td>
+    <td class="raiting">8.884 (245 318)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">5. 1+1 (2011)</td>
+    <td class="raiting">8.835 (470 241)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">6. Леон (1994)</td>
+    <td class="raiting">8.776 (370 691)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">7. Начало (2010)</td>
+    <td class="raiting">8.774 (506 779)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">8. Король Лев (1994)</td>
+    <td class="raiting">8.757 (314 937)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">9. Бойцовский клуб (1999)</td>
+    <td class="raiting">8.714 (431 745)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">10. Иван Васильевич меняет профессию (1973)</td>
+    <td class="raiting">8.708 (334 909)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">11. Жизнь прекрасна (1997)</td>
+    <td class="raiting">8.675 (156 233)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">12. Достучаться до небес (1997)</td>
+    <td class="raiting">8.648 (346 509)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">13. Крестный отец (1972)</td>
+    <td class="raiting">8.636 (212 276)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">14. Криминальное чтиво (1994)</td>
+    <td class="raiting">8.628 (318 400)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">15. Престиж (2006)</td>
+    <td class="raiting">8.621 (388 212)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">16. Игры разума (2001)</td>
+    <td class="raiting">8.620 (321 120)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">17. Операция «Ы» и другие приключения Шурика (1965)</td>
+    <td class="raiting">8.620 (290 579)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">18. Гладиатор (2000)</td>
+    <td class="raiting">8.586 (297 294)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">19. Интерстеллар (2014)</td>
+    <td class="raiting">8.585 (396 120)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">20. Властелин колец: Возвращение Короля (2003)</td>
+    <td class="raiting">8.582 (322 860)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">21. Назад в будущее (1985)</td>
+    <td class="raiting">8.572 (320 890)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">22. Карты, деньги, два ствола (1998)</td>
+    <td class="raiting">8.556 (274 411)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">23. Бриллиантовая рука (1968)</td>
+    <td class="raiting">8.526 (266 254)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">24. Матрица (1999)</td>
+    <td class="raiting">8.524 (341 836)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">25. Поймай меня, если сможешь (2002)</td>
+    <td class="raiting">8.513 (313 689)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">26. Отступники (2006)</td>
+    <td class="raiting">8.513 (293 099)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">27. Пианист (2002)</td>
+    <td class="raiting">8.513 (188 023)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">28. В бой идут одни «старики» (1973)</td>
+    <td class="raiting">8.502 (142 212)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">29. Властелин колец: Братство кольца (2001)</td>
+    <td class="raiting">8.500 (313 876)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">30. Тайна Коко (2017)</td>
+    <td class="raiting">8.500 (86 954)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">31. ВАЛЛ·И (2008)</td>
+    <td class="raiting">8.499 (300 151)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">32. Большой куш (2000)</td>
+    <td class="raiting">8.495 (267 368)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">33. Властелин колец: Две крепости (2002)</td>
+    <td class="raiting">8.489 (297 707)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">34. Американская история X (1998)</td>
+    <td class="raiting">8.489 (233 189)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">35. Джентльмены удачи (1971)</td>
+    <td class="raiting">8.484 (235 217)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">36. Пираты Карибского моря: Проклятие Черной жемчужины (2003)</td>
+    <td class="raiting">8.473 (345 185)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">37. Остров проклятых (2009)</td>
+    <td class="raiting">8.470 (382 494)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting"><a th:href="@{/movie1}">38. Пролетая над гнездом кукушки (1975)</a></td>
+    <td class="raiting">8.469 (217 958)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">39. Темный рыцарь (2008)</td>
+    <td class="raiting">8.466 (352 371)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">40. Титаник (1997)</td>
+    <td class="raiting">8.462 (382 528)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">41. 12 разгневанных мужчин (1956)</td>
+    <td class="raiting">8.449 (77 152)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">42. Запах женщины (1992)</td>
+    <td class="raiting">8.446 (173 682)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">43. Пробуждение (1990)</td>
+    <td class="raiting">8.443 (106 733)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">44. В джазе только девушки (1959)</td>
+    <td class="raiting">8.441 (187 085)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">45. Хатико: Самый верный друг (2008)</td>
+    <td class="raiting">8.437 (278 168)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">46. Эта замечательная жизнь (1947)</td>
+    <td class="raiting">8.431 (42 827)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">47. Огни большого города (1931)</td>
+    <td class="raiting">8.429 (44 301)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">48. Хороший, плохой, злой (1966)</td>
+    <td class="raiting">8.425 (99 125)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">49. Унесённые призраками (2001)</td>
+    <td class="raiting">8.423 (208 906)</td>
+  </tr>
+
+  <tr class="raiting">
+    <td class="raiting">50. ...А зори здесь тихие (1972)</td>
+    <td class="raiting">8.423 (99 214)</td>
+  </tr>
+</table>
+
+<div class="footer">
+  <table class="tabl">
+    <tr>
+      <td id="tabl1">© 2018 – 2019, Киноман</td>
+      <td id="tabl2">Проект компании Iteen Academy</td>
+    </tr>
+  </table>
+</div>
+
+<script>
+  $(document).ready(function() {
+    for (var i = 1; i < 101000; i++) {
+      $("#string1").fadeOut(3000).fadeIn(2000);
+    }
+  });
+</script>
+</body>
+</html>

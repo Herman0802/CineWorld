@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${movie.title}"></title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<a href="/" th:href="@{/}"><img class="back" src="/static/images/backward.png" alt="Back"></a>
+
+<div class="header">
+  <h1 th:text="${movie.title}"></h1>
+</div>
+
+<ul>
+  <li>Режиссер: <span th:text="${movie.director}"></span>; </li>
+  <li>Год создание: <span th:text="${movie.releaseYear}"></span>; </li>
+  <li>Бюджет: <span th:text="${movie.budget}"></span>;</li>
+  <li>Сборы: <span th:text="${movie.boxOffice}"></span>;</li>
+  <li>Отметка Кинопоиск: <span th:text="${movie.kinopoiskRating}"></span>;</li>
+  <li>Отметка IMDb: <span th:text="${movie.imdbRating}"></span>;</li>
+  <li>Трейлер:</li>
+</ul>
+
+<iframe width="560" height="315" th:src="${movie.trailerUrl}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2>Описание:</h2>
+<p th:text="${movie.description}"></p>
+
+<h2>Рецензия:</h2>
+<p th:text="${movie.review}"></p>
+
+<h2>Личная отметка: <span th:text="${movie.personalRating}"></span>;</h2>
+
+<div class="footer">
+  <table class="tabl">
+    <tr>
+      <td id="tabl1">© 2018 – 2019, Киноман</td>
+      <td id="tabl2">Проект компании Iteen Academy</td>
+    </tr>
+  </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script>
+  $(document).ready(function() {
+    for(var i = 1; i < 101000; i++) {
+      $("#string1").fadeOut(3000).fadeIn(2000);
+    }
+  });
+</script>
+</body>
+</html>
