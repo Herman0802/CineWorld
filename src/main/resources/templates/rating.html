@@ -35,7 +35,7 @@
       <a th:if="${movie.hasReview()}" th:href="@{/movie/{id}(id=${movie.id}, source='rating')}" th:text="${movie.title}"></a>
       <span th:if="${!movie.hasReview()}" th:text="${movie.title}"></span>
     </td>
-    <td class="rating" th:text="${movie.releaseYear}"></td>
+    <td class="rating" th:text="${#temporals.format(movie.releaseDate, 'yyyy')}"></td>
     <td class="rating" th:text="${movie.imdbRating}"></td>
     <td class="rating votes" th:text="${movie.votes}"></td>
   </tr>
@@ -56,7 +56,6 @@
 <script>
   $(document).ready(function() {
     animateString();
-    sortTable();
     formatVotes();
   });
 </script>

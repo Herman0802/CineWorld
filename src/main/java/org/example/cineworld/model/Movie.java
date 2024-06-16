@@ -11,6 +11,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 
+import java.time.LocalDate;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -24,7 +26,7 @@ public class Movie {
 
     private String title;
     private String director;
-    private int releaseYear;
+    private LocalDate releaseDate;
     private long budget;
     private long boxOffice;
     private float imdbRating;

@@ -10,6 +10,8 @@ import org.springframework.core.io.ResourceLoader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import java.time.LocalDate;
+
 @Configuration
 public class LoadDatabase {
 
@@ -31,7 +33,7 @@ public class LoadDatabase {
             repository.save(Movie.builder()
                     .title("Пролетая над гнездом кукушки")
                     .director("Милош Форман")
-                    .releaseYear(1975)
+                    .releaseDate(LocalDate.of(2049, 5, 23))
                     .budget(3_000_000)
                     .boxOffice(108_981_275)
                     .imdbRating(8.70f)
@@ -45,7 +47,7 @@ public class LoadDatabase {
             repository.save(Movie.builder()
                     .title("Призрак")
                     .director("Роман Полански")
-                    .releaseYear(2009)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .budget(45_000_000)
                     .boxOffice(60_222_298)
                     .imdbRating(7.20f)
@@ -59,7 +61,7 @@ public class LoadDatabase {
             repository.save(Movie.builder()
                     .title("Призрачная нить")
                     .director("Пол Томас Андерсон")
-                    .releaseYear(2017)
+                    .releaseDate(LocalDate.of(2025, 5, 23))
                     .budget(35_000_000)
                     .boxOffice(47_158_342)
                     .imdbRating(7.60f)
@@ -73,7 +75,7 @@ public class LoadDatabase {
             repository.save(Movie.builder()
                     .title("Старикам тут не место")
                     .director("Итан Коэн, Джоэл Коэн")
-                    .releaseYear(2007)
+                    .releaseDate(LocalDate.of(2029, 5, 23))
                     .budget(25_000_000)
                     .boxOffice(171_627_166)
                     .imdbRating(8.10f)
@@ -86,7 +88,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Побег из Шоушенка")
-                    .releaseYear(1994)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(9.191f)
                     .votes(482972)
                     .build()
@@ -94,7 +96,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Зеленая миля")
-                    .releaseYear(1999)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(9.134f)
                     .votes(452180)
                     .build()
@@ -102,7 +104,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Форрест Гамп")
-                    .releaseYear(1994)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(9.013f)
                     .votes(442015)
                     .build()
@@ -110,7 +112,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Список Шиндлера")
-                    .releaseYear(1993)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.884f)
                     .votes(245318)
                     .build()
@@ -118,7 +120,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("1+1")
-                    .releaseYear(2011)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.835f)
                     .votes(470241)
                     .build()
@@ -126,7 +128,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Леон")
-                    .releaseYear(1994)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.776f)
                     .votes(370691)
                     .build()
@@ -134,7 +136,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Начало")
-                    .releaseYear(2010)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.774f)
                     .votes(506779)
                     .build()
@@ -142,7 +144,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Король Лев")
-                    .releaseYear(1994)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.757f)
                     .votes(314937)
                     .build()
@@ -150,7 +152,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Бойцовский клуб")
-                    .releaseYear(1999)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.714f)
                     .votes(431745)
                     .build()
@@ -158,7 +160,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Иван Васильевич меняет профессию")
-                    .releaseYear(1973)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.708f)
                     .votes(334909)
                     .build()
@@ -166,7 +168,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Жизнь прекрасна")
-                    .releaseYear(1997)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.675f)
                     .votes(156233)
                     .build()
@@ -174,7 +176,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Достучаться до небес")
-                    .releaseYear(1997)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.648f)
                     .votes(346509)
                     .build()
@@ -182,7 +184,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Крестный отец")
-                    .releaseYear(1972)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.636f)
                     .votes(212276)
                     .build()
@@ -190,7 +192,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Криминальное чтиво")
-                    .releaseYear(1994)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.628f)
                     .votes(318400)
                     .build()
@@ -198,7 +200,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Престиж")
-                    .releaseYear(2006)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.621f)
                     .votes(388212)
                     .build()
@@ -206,7 +208,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Игры разума")
-                    .releaseYear(2001)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.620f)
                     .votes(321120)
                     .build()
@@ -214,7 +216,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Операция «Ы» и другие приключения Шурика")
-                    .releaseYear(1965)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.620f)
                     .votes(290579)
                     .build()
@@ -222,7 +224,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Гладиатор")
-                    .releaseYear(2000)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.586f)
                     .votes(297294)
                     .build()
@@ -230,7 +232,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Интерстеллар")
-                    .releaseYear(2014)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.585f)
                     .votes(396120)
                     .build()
@@ -238,7 +240,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Властелин колец: Возвращение Короля")
-                    .releaseYear(2003)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.582f)
                     .votes(322860)
                     .build()
@@ -246,7 +248,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Назад в будущее")
-                    .releaseYear(1985)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.572f)
                     .votes(320890)
                     .build()
@@ -254,7 +256,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Карты, деньги, два ствола")
-                    .releaseYear(1998)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.556f)
                     .votes(274411)
                     .build()
@@ -262,7 +264,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Бриллиантовая рука")
-                    .releaseYear(1968)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.526f)
                     .votes(266254)
                     .build()
@@ -270,7 +272,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Матрица")
-                    .releaseYear(1999)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.524f)
                     .votes(341836)
                     .build()
@@ -278,7 +280,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Поймай меня, если сможешь")
-                    .releaseYear(2002)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.513f)
                     .votes(313689)
                     .build()
@@ -286,7 +288,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Отступники")
-                    .releaseYear(2006)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.513f)
                     .votes(293099)
                     .build()
@@ -294,7 +296,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Пианист")
-                    .releaseYear(2002)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.513f)
                     .votes(188023)
                     .build()
@@ -302,7 +304,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("В бой идут одни «старики»")
-                    .releaseYear(1973)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.502f)
                     .votes(142212)
                     .build()
@@ -310,7 +312,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Властелин колец: Братство кольца")
-                    .releaseYear(2001)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.500f)
                     .votes(313876)
                     .build()
@@ -318,7 +320,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Тайна Коко")
-                    .releaseYear(2017)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.500f)
                     .votes(86954)
                     .build()
@@ -326,7 +328,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("ВАЛЛ·И")
-                    .releaseYear(2008)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.499f)
                     .votes(300151)
                     .build()
@@ -334,7 +336,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Большой куш")
-                    .releaseYear(2000)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.495f)
                     .votes(267368)
                     .build()
@@ -342,7 +344,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Властелин колец: Две крепости")
-                    .releaseYear(2002)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.489f)
                     .votes(297707)
                     .build()
@@ -350,7 +352,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Американская история X")
-                    .releaseYear(1998)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.489f)
                     .votes(233189)
                     .build()
@@ -358,7 +360,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Джентльмены удачи")
-                    .releaseYear(1971)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.484f)
                     .votes(235217)
                     .build()
@@ -366,7 +368,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Пираты Карибского моря: Проклятие Черной жемчужины")
-                    .releaseYear(2003)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.473f)
                     .votes(345185)
                     .build()
@@ -374,7 +376,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Остров проклятых")
-                    .releaseYear(2009)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.470f)
                     .votes(382494)
                     .build()
@@ -382,7 +384,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Темный рыцарь")
-                    .releaseYear(2008)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.466f)
                     .votes(352371)
                     .build()
@@ -390,7 +392,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Титаник")
-                    .releaseYear(1997)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.462f)
                     .votes(382528)
                     .build()
@@ -398,7 +400,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("12 разгневанных мужчин")
-                    .releaseYear(1956)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.449f)
                     .votes(77152)
                     .build()
@@ -406,7 +408,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Запах женщины")
-                    .releaseYear(1992)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.446f)
                     .votes(173682)
                     .build()
@@ -414,7 +416,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Пробуждение")
-                    .releaseYear(1990)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.443f)
                     .votes(106733)
                     .build()
@@ -422,7 +424,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("В джазе только девушки")
-                    .releaseYear(1959)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.441f)
                     .votes(187085)
                     .build()
@@ -430,7 +432,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Хатико: Самый верный друг")
-                    .releaseYear(2008)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.437f)
                     .votes(278168)
                     .build()
@@ -438,7 +440,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Эта замечательная жизнь")
-                    .releaseYear(1947)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.431f)
                     .votes(42827)
                     .build()
@@ -446,7 +448,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Огни большого города")
-                    .releaseYear(1931)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.429f)
                     .votes(44301)
                     .build()
@@ -454,7 +456,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Хороший, плохой, злой")
-                    .releaseYear(1966)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.425f)
                     .votes(99125)
                     .build()
@@ -462,7 +464,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("Унесённые призраками")
-                    .releaseYear(2001)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.423f)
                     .votes(208906)
                     .build()
@@ -470,7 +472,7 @@ public class LoadDatabase {
 
             repository.save(Movie.builder()
                     .title("...А зори здесь тихие")
-                    .releaseYear(1972)
+                    .releaseDate(LocalDate.of(2019, 5, 23))
                     .imdbRating(8.423f)
                     .votes(99214)
                     .build()

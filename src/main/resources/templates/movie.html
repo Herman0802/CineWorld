@@ -16,7 +16,7 @@
 
 <ul>
   <li>Режиссер: <span th:text="${movie.director}"></span>;</li>
-  <li>Год создание: <span th:text="${movie.releaseYear}"></span>;</li>
+  <li>Год создания: <span th:text="${#temporals.format(movie.releaseDate, 'yyyy')}"></span>;</li>
   <li>Бюджет: $<span id="budget" th:text="${movie.budget}"></span>;</li>
   <li>Сборы: $<span id="boxOffice" th:text="${movie.boxOffice}"></span>;</li>
   <li>Отметка IMDb: <span th:text="${movie.imdbRating}"></span>;</li>

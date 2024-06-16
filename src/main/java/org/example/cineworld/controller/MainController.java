@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class MainController {
@@ -28,7 +31,8 @@ public class MainController {
 
     @GetMapping("/movie/{id}")
     public String movie(@PathVariable("id") Long id, @RequestParam("source") String source, Model model) {
-        Movie movie = movieRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid movie Id:" + id));
+        Movie movie = movieRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid movie Id:" + id));
         model.addAttribute("movie", movie);
         model.addAttribute("source", source);
         return "movie";
@@ -61,13 +65,21 @@ public class MainController {
 
     @GetMapping("/rating")
     public String rating(Model model) {
-        List<Movie> movies = movieRepository.findAll();
+        List<Movie> movies = movieRepository.findAll().stream()
+                .sorted(Comparator.comparing(Movie::getImdbRating).reversed()
+                        .thenComparing(Comparator.comparing(Movie::getVotes).reversed()))
+                .collect(Collectors.toList());
         model.addAttribute("movies", movies);
         return "rating";
     }
 
     @GetMapping("/poster")
-    public String poster() {
+    public String poster(Model model) {
+        List<Movie> upcomingMovies = movieRepository.findAll().stream()
+                .filter(movie -> (movie.getReleaseDate() != null) && movie.getReleaseDate().isAfter(LocalDate.now()))
+                .sorted(Comparator.comparing(Movie::getReleaseDate))
+                .collect(Collectors.toList());
+        model.addAttribute("movies", upcomingMovies);
         return "poster";
     }
 

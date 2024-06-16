@@ -19,135 +19,20 @@
 </div>
 
 <table class="table" style="width:100%">
+  <thead>
   <tr class="rating">
+    <th class="table1">#</th>
     <th class="table1">Фильм</th>
     <th class="table1">Дата премьеры</th>
   </tr>
-
-  <tr class="rating">
-    <td class="rating">1. Аладдин</td>
-    <td class="rating">23 мая 2019</td>
+  </thead>
+  <tbody>
+  <tr th:each="movie, iterStat : ${movies}" class="rating">
+    <td class="rating" th:text="${iterStat.index + 1}"></td>
+    <td class="rating" th:text="${movie.title}"></td>
+    <td class="rating" th:text="${#temporals.format(movie.releaseDate, 'dd MMMM yyyy')}"></td>
   </tr>
-
-  <tr class="rating">
-    <td class="rating">2. Красивый, плохой, злой</td>
-    <td class="rating">23 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">3. Гори, гори ясно</td>
-    <td class="rating">23 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">4. Игрища престолов</td>
-    <td class="rating">23 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">5. То, что никто не видит</td>
-    <td class="rating">23 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">6. Плейбой под прикрытием</td>
-    <td class="rating">23 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">7. Ядовитая роза</td>
-    <td class="rating">23 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">8. Весёлая ферма</td>
-    <td class="rating">23 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">9. Годзилла 2: Король монстров</td>
-    <td class="rating">30 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">10. Тайная жизнь домашних животных 2</td>
-    <td class="rating">30 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">11. Куриоса</td>
-    <td class="rating">30 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">12. Так сказал Чарли</td>
-    <td class="rating">30 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">13. Золотая перчатка</td>
-    <td class="rating">30 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">14. Однажды в Америке или чисто русская сказка</td>
-    <td class="rating">30 мая 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">15. Люди Икс: Тёмный Феникс</td>
-    <td class="rating">6 июня 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">16. Рокетмен</td>
-    <td class="rating">6 июня 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">17. Домино</td>
-    <td class="rating">6 июня 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">18. Мы всегда жили в замке</td>
-    <td class="rating">6 июня 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">19. Вита и Вирджиния</td>
-    <td class="rating">6 июня 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">20. Дитя тьмы</td>
-    <td class="rating">6 июня 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">21. Обитель страха</td>
-    <td class="rating">6 июня 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">22. Порт</td>
-    <td class="rating">6 июня 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">23. 22 ярда</td>
-    <td class="rating">6 июня 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">24. Люди в черном: Интернэшнл</td>
-    <td class="rating">6 июня 2019</td>
-  </tr>
-
-  <tr class="rating">
-    <td class="rating">25. Боль и слава</td>
-    <td class="rating">6 июня 2019</td>
-  </tr>
+  </tbody>
 </table>
 
 <div class="footer">
