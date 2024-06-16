@@ -7,36 +7,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
+    private final MovieRepository movieRepository;
 
     @Autowired
-    private MovieRepository movieRepository;
+    public MainController(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
+    }
 
-    @GetMapping("/")
+    @RequestMapping({"/", "/reviews"})
     public String index() {
-        return "index";
-    }
-
-    @GetMapping("/news")
-    public String news() {
-        return "news";
-    }
-
-    @GetMapping("/poster")
-    public String poster() {
-        return "poster";
-    }
-
-    @GetMapping("/rating")
-    public String rating() {
-        return "rating";
-    }
-
-    @GetMapping("/enter")
-    public String enter() {
-        return "enter";
+        return "reviews";
     }
 
     @GetMapping("/movie/{id}")
@@ -44,6 +28,11 @@ public class MainController {
         Movie movie = movieRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid movie Id:" + id));
         model.addAttribute("movie", movie);
         return "movie";
+    }
+
+    @GetMapping("/news")
+    public String news() {
+        return "news";
     }
 
     @GetMapping("/new1")
@@ -64,5 +53,20 @@ public class MainController {
     @GetMapping("/new4")
     public String new4() {
         return "new4";
+    }
+
+    @GetMapping("/rating")
+    public String rating() {
+        return "rating";
+    }
+
+    @GetMapping("/poster")
+    public String poster() {
+        return "poster";
+    }
+
+    @GetMapping("/enter")
+    public String enter() {
+        return "enter";
     }
 }

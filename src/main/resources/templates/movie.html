@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title th:text="${movie.title}"></title>
-  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" th:href="@{/styles.css}">
+  </style>
 </head>
 <body>
-<a href="/" th:href="@{/}"><img class="back" src="/static/images/backward.png" alt="Back"></a>
+<a href="/reviews" th:href="@{/reviews}"><img class="back" th:src="@{/images/backward.png}" alt="Back"></a>
 
 <div class="header">
   <h1 th:text="${movie.title}"></h1>
@@ -25,10 +26,10 @@
 <iframe width="560" height="315" th:src="${movie.trailerUrl}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2>Описание:</h2>
-<p th:text="${movie.description}"></p>
+<p class="description" th:utext="${movie.description}"></p>
 
 <h2>Рецензия:</h2>
-<p th:text="${movie.review}"></p>
+<p class="review" th:utext="${movie.review}"></p>
 
 <h2>Личная отметка: <span th:text="${movie.personalRating}"></span>;</h2>
 
@@ -40,14 +41,5 @@
     </tr>
   </table>
 </div>
-
-<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
-<script>
-  $(document).ready(function() {
-    for(var i = 1; i < 101000; i++) {
-      $("#string1").fadeOut(3000).fadeIn(2000);
-    }
-  });
-</script>
 </body>
 </html>

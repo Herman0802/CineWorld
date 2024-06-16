@@ -4,150 +4,149 @@
   <meta charset="UTF-8">
   <title>Киноман</title>
   <link rel="stylesheet" th:href="@{/styles.css}">
-  <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 </head>
 <body>
 <div class="header">
   <h1 id="string1">Киноман</h1>
 </div>
 
-<div class="topnav">
-  <a th:href="@{/}" class="topnav">Рецензии</a>
-  <a th:href="@{/news}" class="topnav">Новости</a>
-  <a th:href="@{/rating}" class="topnav">Рейтинг фильмов</a>
-  <a th:href="@{/poster}" class="topnav">Афиша</a>
-  <a th:href="@{/enter}" class="topnav" id="enter">Войти</a>
+<div class="navbar">
+  <a th:href="@{/reviews}" class="navbar">Рецензии</a>
+  <a th:href="@{/news}" class="navbar">Новости</a>
+  <a th:href="@{/rating}" class="navbar">Рейтинг фильмов</a>
+  <a th:href="@{/poster}" class="navbar">Афиша</a>
+  <a th:href="@{/enter}" class="navbar" id="enter">Войти</a>
 </div>
 
 <table class="table" style="width:100%">
-  <tr class="raiting">
+  <tr class="rating">
     <th class="table1">Фильм</th>
     <th class="table1">Дата премьеры</th>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">1. Аладдин</td>
-    <td class="raiting">23 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">1. Аладдин</td>
+    <td class="rating">23 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">2. Красивый, плохой, злой</td>
-    <td class="raiting">23 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">2. Красивый, плохой, злой</td>
+    <td class="rating">23 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">3. Гори, гори ясно</td>
-    <td class="raiting">23 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">3. Гори, гори ясно</td>
+    <td class="rating">23 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">4. Игрища престолов</td>
-    <td class="raiting">23 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">4. Игрища престолов</td>
+    <td class="rating">23 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">5. То, что никто не видит</td>
-    <td class="raiting">23 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">5. То, что никто не видит</td>
+    <td class="rating">23 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">6. Плейбой под прикрытием</td>
-    <td class="raiting">23 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">6. Плейбой под прикрытием</td>
+    <td class="rating">23 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">7. Ядовитая роза</td>
-    <td class="raiting">23 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">7. Ядовитая роза</td>
+    <td class="rating">23 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">8. Весёлая ферма</td>
-    <td class="raiting">23 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">8. Весёлая ферма</td>
+    <td class="rating">23 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">9. Годзилла 2: Король монстров</td>
-    <td class="raiting">30 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">9. Годзилла 2: Король монстров</td>
+    <td class="rating">30 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">10. Тайная жизнь домашних животных 2</td>
-    <td class="raiting">30 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">10. Тайная жизнь домашних животных 2</td>
+    <td class="rating">30 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">11. Куриоса</td>
-    <td class="raiting">30 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">11. Куриоса</td>
+    <td class="rating">30 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">12. Так сказал Чарли</td>
-    <td class="raiting">30 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">12. Так сказал Чарли</td>
+    <td class="rating">30 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">13. Золотая перчатка</td>
-    <td class="raiting">30 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">13. Золотая перчатка</td>
+    <td class="rating">30 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">14. Однажды в Америке или чисто русская сказка</td>
-    <td class="raiting">30 мая 2019</td>
+  <tr class="rating">
+    <td class="rating">14. Однажды в Америке или чисто русская сказка</td>
+    <td class="rating">30 мая 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">15. Люди Икс: Тёмный Феникс</td>
-    <td class="raiting">6 июня 2019</td>
+  <tr class="rating">
+    <td class="rating">15. Люди Икс: Тёмный Феникс</td>
+    <td class="rating">6 июня 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">16. Рокетмен</td>
-    <td class="raiting">6 июня 2019</td>
+  <tr class="rating">
+    <td class="rating">16. Рокетмен</td>
+    <td class="rating">6 июня 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">17. Домино</td>
-    <td class="raiting">6 июня 2019</td>
+  <tr class="rating">
+    <td class="rating">17. Домино</td>
+    <td class="rating">6 июня 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">18. Мы всегда жили в замке</td>
-    <td class="raiting">6 июня 2019</td>
+  <tr class="rating">
+    <td class="rating">18. Мы всегда жили в замке</td>
+    <td class="rating">6 июня 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">19. Вита и Вирджиния</td>
-    <td class="raiting">6 июня 2019</td>
+  <tr class="rating">
+    <td class="rating">19. Вита и Вирджиния</td>
+    <td class="rating">6 июня 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">20. Дитя тьмы</td>
-    <td class="raiting">6 июня 2019</td>
+  <tr class="rating">
+    <td class="rating">20. Дитя тьмы</td>
+    <td class="rating">6 июня 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">21. Обитель страха</td>
-    <td class="raiting">6 июня 2019</td>
+  <tr class="rating">
+    <td class="rating">21. Обитель страха</td>
+    <td class="rating">6 июня 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">22. Порт</td>
-    <td class="raiting">6 июня 2019</td>
+  <tr class="rating">
+    <td class="rating">22. Порт</td>
+    <td class="rating">6 июня 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">23. 22 ярда</td>
-    <td class="raiting">6 июня 2019</td>
+  <tr class="rating">
+    <td class="rating">23. 22 ярда</td>
+    <td class="rating">6 июня 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">24. Люди в черном: Интернэшнл</td>
-    <td class="raiting">6 июня 2019</td>
+  <tr class="rating">
+    <td class="rating">24. Люди в черном: Интернэшнл</td>
+    <td class="rating">6 июня 2019</td>
   </tr>
 
-  <tr class="raiting">
-    <td class="raiting">25. Боль и слава</td>
-    <td class="raiting">6 июня 2019</td>
+  <tr class="rating">
+    <td class="rating">25. Боль и слава</td>
+    <td class="rating">6 июня 2019</td>
   </tr>
 </table>
 
@@ -160,11 +159,14 @@
   </table>
 </div>
 
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 <script>
   $(document).ready(function() {
-    for (var i = 1; i < 101000; i++) {
-      $("#string1").fadeOut(3000).fadeIn(2000);
+    function animateString() {
+      $("#string1").fadeOut(3000).fadeIn(2000, animateString);
     }
+
+    animateString();
   });
 </script>
 </body>

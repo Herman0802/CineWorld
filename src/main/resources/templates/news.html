@@ -4,19 +4,18 @@
   <meta charset="UTF-8">
   <title>Киноман</title>
   <link rel="stylesheet" th:href="@{/styles.css}">
-  <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 </head>
 <body>
 <div class="header">
   <h1 id="string1">Киноман</h1>
 </div>
 
-<div class="topnav">
-  <a th:href="@{/}" class="topnav">Рецензии</a>
-  <a th:href="@{/news}" class="topnav">Новости</a>
-  <a th:href="@{/rating}" class="topnav">Рейтинг фильмов</a>
-  <a th:href="@{/poster}" class="topnav">Афиша</a>
-  <a th:href="@{/enter}" class="topnav" id="enter">Войти</a>
+<div class="navbar">
+  <a th:href="@{/reviews}" class="navbar">Рецензии</a>
+  <a th:href="@{/news}" class="navbar">Новости</a>
+  <a th:href="@{/rating}" class="navbar">Рейтинг фильмов</a>
+  <a th:href="@{/poster}" class="navbar">Афиша</a>
+  <a th:href="@{/enter}" class="navbar" id="enter">Войти</a>
 </div>
 
 <div class="clearfix">
@@ -60,11 +59,14 @@
   </table>
 </div>
 
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 <script>
   $(document).ready(function() {
-    for (var i = 1; i < 101000; i++) {
-      $("#string1").fadeOut(3000).fadeIn(2000);
+    function animateString() {
+      $("#string1").fadeOut(3000).fadeIn(2000, animateString);
     }
+
+    animateString();
   });
 </script>
 </body>

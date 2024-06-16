@@ -33,7 +33,7 @@ public class Movie {
 
     @Column(length = 1000)
     private String description;
-    @Column(length = 2500)
+    @Column(length = 4000)
     private String review;
 
     private String personalRating;
