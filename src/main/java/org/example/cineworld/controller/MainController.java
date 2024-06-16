@@ -1,14 +1,13 @@
 package org.example.cineworld.controller;
 
 import org.example.cineworld.model.Movie;
+import org.example.cineworld.model.News;
 import org.example.cineworld.repository.MovieRepository;
+import org.example.cineworld.repository.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.Comparator;
@@ -18,10 +17,12 @@ import java.util.stream.Collectors;
 @Controller
 public class MainController {
     private final MovieRepository movieRepository;
+    private final NewsRepository newsRepository;
 
     @Autowired
-    public MainController(MovieRepository movieRepository) {
+    public MainController(MovieRepository movieRepository, NewsRepository newsRepository) {
         this.movieRepository = movieRepository;
+        this.newsRepository = newsRepository;
     }
 
     @RequestMapping({"/", "/reviews"})
@@ -33,34 +34,35 @@ public class MainController {
     public String movie(@PathVariable("id") Long id, @RequestParam("source") String source, Model model) {
         Movie movie = movieRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid movie Id:" + id));
+
+        // Podział opisu i recenzji na akapity na podstawie pojedynczego znaku nowej linii
+        String[] descriptionParagraphs = movie.getDescription().split("\\r?\\n");
+        String[] reviewParagraphs = movie.getReview().split("\\r?\\n");
+
         model.addAttribute("movie", movie);
+        model.addAttribute("descriptionParagraphs", descriptionParagraphs);
+        model.addAttribute("reviewParagraphs", reviewParagraphs);
         model.addAttribute("source", source);
         return "movie";
     }
 
     @GetMapping("/news")
-    public String news() {
+    public String news(Model model) {
+        List<News> newsList = newsRepository.findAll();
+        model.addAttribute("newsList", newsList);
         return "news";
     }
 
-    @GetMapping("/new1")
-    public String new1() {
-        return "new1";
-    }
+    @GetMapping("/news/{id}")
+    public String newsDetail(@PathVariable("id") Long id, Model model) {
+        News news = newsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid news Id:" + id));
 
-    @GetMapping("/new2")
-    public String new2() {
-        return "new2";
-    }
+        // Podział treści na akapity na podstawie pojedynczego znaku nowej linii
+        String[] paragraphs = news.getContent().split("\\r?\\n");
+        model.addAttribute("news", news);
+        model.addAttribute("paragraphs", paragraphs);
 
-    @GetMapping("/new3")
-    public String new3() {
-        return "new3";
-    }
-
-    @GetMapping("/new4")
-    public String new4() {
-        return "new4";
+        return "newsDetails";
     }
 
     @GetMapping("/rating")

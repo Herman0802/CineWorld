@@ -1,7 +1,9 @@
 package org.example.cineworld;
 
 import org.example.cineworld.model.Movie;
+import org.example.cineworld.model.News;
 import org.example.cineworld.repository.MovieRepository;
+import org.example.cineworld.repository.NewsRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -477,6 +479,31 @@ public class LoadDatabase {
                     .votes(99214)
                     .build()
             );
+        };
+    }
+
+    @Bean
+    CommandLineRunner initNewsDatabase(NewsRepository newsRepository, ResourceLoader resourceLoader) {
+        return args -> {
+            String news1 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/news/news1.txt").getURI())));
+            String news2 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/news/news2.txt").getURI())));
+
+            newsRepository.save(News.builder()
+                    .title("Крис Рок перезапустит хоррор-франшизу «Пила»")
+                    .content(news1)
+                    .publicationDate(LocalDate.of(2020, 5, 23))
+                    .coverImageUrl("/images/5.jpg")
+                    .contentImageUrl("/images/6.jpg")
+                    .source("Deadline")
+                    .build());
+            newsRepository.save(News.builder()
+                    .title("Роберт Паттинсон может сыграть Бэтмена в фильме Мэтта Ривза")
+                    .content(news2)
+                    .publicationDate(LocalDate.of(2019, 5, 31))
+                    .coverImageUrl("/images/7.jpg")
+                    .contentImageUrl("/images/8.jpg")
+                    .source("Variety / Deadline")
+                    .build());
         };
     }
 }

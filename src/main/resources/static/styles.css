@@ -39,6 +39,22 @@ img {
   border-radius: 0;
 }
 
+.clearfix {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #bdd4e5;
+  margin-bottom: 20px;
+}
+
+.clearfix h2 {
+  margin-top: 0;
+}
+
+.top-margin {
+  margin-top: 20px;
+}
+
 /* Layout and containers */
 .clearfix::after {
   content: "";
@@ -130,23 +146,15 @@ th {
 }
 
 /* Styling for article images */
-#src1, #src2 {
+#src1 {
   float: none;
-  border: none;
-  border-radius: 0;
+  border: 4px solid black;
+  border-radius: 5px;
   margin-left: auto;
   margin-right: auto;
   display: block;
-}
-
-#src1 {
   width: 50%;
   height: auto;
-}
-
-#src2 {
-  width: 700px;
-  height: 700px;
 }
 
 /* Styling for iframe */
@@ -163,9 +171,5 @@ p {
   text-justify: inter-word;
   font-size: 18px;
   line-height: 1.6;
-}
-
-/* Additional styles for descriptions and reviews */
-.description, .review {
-  white-space: pre-line;
+  margin-bottom: 20px;
 }

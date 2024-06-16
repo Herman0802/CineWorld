@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${news.title}"></title>
+  <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<a th:href="@{/news}">
+  <img class="back" th:src="@{/images/backward.png}" alt="Back">
+</a>
+
+<div class="header">
+  <h1 th:text="${news.title}"></h1>
+</div>
+
+<img th:src="@{${news.contentImageUrl}}" alt="News Image" id="src1">
+
+<div th:each="paragraph : ${paragraphs}">
+  <p th:text="${paragraph}"></p>
+</div>
+<p>Источник: <span th:text="${news.source}"></span></p>
+
+<div class="footer">
+  <table class="tabl">
+    <tr>
+      <td id="tabl1">© 2018 – 2019, Киноман</td>
+      <td id="tabl2">Проект компании Iteen Academy</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

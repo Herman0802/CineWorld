@@ -18,37 +18,13 @@
   <a th:href="@{/enter}" class="navbar" id="enter">Войти</a>
 </div>
 
-<div class="clearfix">
-  <img th:src="@{/images/5.jpg}" alt="Smiley face">
-  <a th:href="@{/new1}"><h2>Крис Рок перезапустит хоррор-франшизу «Пила»</h2></a>
-  <p>17.05.2019</p>
+<div th:each="newsItem : ${newsList}" class="clearfix top-margin">
+  <img th:src="@{${newsItem.coverImageUrl}}" alt="News Image">
+  <a th:href="@{/news/{id}(id=${newsItem.id})}">
+    <h2 th:text="${newsItem.title}"></h2>
+  </a>
+  <p class="date" th:text="${#temporals.format(newsItem.publicationDate, 'dd.MM.yyyy')}"></p>
 </div>
-
-<hr>
-
-<div class="clearfix">
-  <img th:src="@{/images/7.jpg}" alt="Smiley face">
-  <a th:href="@{/new2}"><h2>Роберт Паттинсон может сыграть Бэтмена в фильме Мэтта Ривза</h2></a>
-  <p>17.05.2019</p>
-</div>
-
-<hr>
-
-<div class="clearfix">
-  <img th:src="@{/images/9.jpg}" alt="Smiley face">
-  <a th:href="@{/new3}"><h2>Четвертый сезон «Рика и Морти» выйдет в ноябре 2019 года</h2></a>
-  <p>15.05.2019</p>
-</div>
-
-<hr>
-
-<div class="clearfix">
-  <img th:src="@{/images/12.jpg}" alt="Smiley face">
-  <a th:href="@{/new4}"><h2>Фанаты создали петицию с требованием переснять восьмой сезон «Игры престолов»</h2></a>
-  <p>15.05.2019</p>
-</div>
-
-<hr>
 
 <div class="footer">
   <table class="tabl">

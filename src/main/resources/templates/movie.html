@@ -26,10 +26,18 @@
 <iframe width="560" height="315" th:src="${movie.trailerUrl}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2>Описание:</h2>
-<p class="description" th:utext="${movie.description}"></p>
+<div class="content">
+  <div th:each="paragraph : ${descriptionParagraphs}">
+    <p th:text="${paragraph}"></p>
+  </div>
+</div>
 
 <h2>Рецензия:</h2>
-<p class="review" th:utext="${movie.review}"></p>
+<div class="content">
+  <div th:each="paragraph : ${reviewParagraphs}">
+    <p th:text="${paragraph}"></p>
+  </div>
+</div>
 
 <h2>Личная отметка: <span th:text="${movie.personalRating}"></span>/10.0;</h2>
 
