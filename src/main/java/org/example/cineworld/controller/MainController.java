@@ -25,9 +25,9 @@ public class MainController {
         this.newsRepository = newsRepository;
     }
 
-    @RequestMapping({"/", "/movie-reviews"})
+    @RequestMapping({"/", "/reviews"})
     public String index() {
-        return "movie-reviews";
+        return "reviews";
     }
 
     @GetMapping("/movie/{id}")
@@ -62,7 +62,7 @@ public class MainController {
         model.addAttribute("news", news);
         model.addAttribute("paragraphs", paragraphs);
 
-        return "newsDetails";
+        return "news-details";
     }
 
     @GetMapping("/rating")
@@ -75,14 +75,14 @@ public class MainController {
         return "rating";
     }
 
-    @GetMapping("/poster")
+    @GetMapping("/premieres")
     public String poster(Model model) {
         List<Movie> upcomingMovies = movieRepository.findAll().stream()
                 .filter(movie -> (movie.getReleaseDate() != null) && movie.getReleaseDate().isAfter(LocalDate.now()))
                 .sorted(Comparator.comparing(Movie::getReleaseDate))
                 .collect(Collectors.toList());
         model.addAttribute("movies", upcomingMovies);
-        return "poster";
+        return "premieres";
     }
 
     @GetMapping("/enter")

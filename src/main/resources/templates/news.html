@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Cine World</title>
@@ -11,15 +11,15 @@
 </div>
 
 <div class="navbar">
-  <a th:href="@{/movie-reviews}" class="navbar">Рецензии</a>
-  <a th:href="@{/news}" class="navbar">Новости</a>
-  <a th:href="@{/rating}" class="navbar">Рейтинг фильмов</a>
-  <a th:href="@{/poster}" class="navbar">Афиша</a>
-  <a th:href="@{/enter}" class="navbar" id="enter">Войти</a>
+  <a th:href="@{/reviews}" class="navbar">Reviews</a>
+  <a th:href="@{/news}" class="navbar">News</a>
+  <a th:href="@{/rating}" class="navbar">Movie Rating</a>
+  <a th:href="@{/premieres}" class="navbar">Premieres</a>
+  <a th:href="@{/enter}" class="navbar" id="enter">Login</a>
 </div>
 
 <div th:each="newsItem : ${newsList}" class="clearfix top-margin">
-  <img th:src="@{${newsItem.coverImageUrl}}" alt="News Image">
+  <img th:src="@{${newsItem.coverImageUrl}}" alt="News Cover Image">
   <a th:href="@{/news/{id}(id=${newsItem.id})}">
     <h2 th:text="${newsItem.title}"></h2>
   </a>
@@ -29,8 +29,8 @@
 <div class="footer">
   <table class="tabl">
     <tr>
-      <td id="tabl1">© 2018 – 2019, Киноман</td>
-      <td id="tabl2">Проект компании Iteen Academy</td>
+      <td id="tabl1">© 2019 – 2024, Cine World</td>
+      <td id="tabl2">A project by Herman Lazarchyk</td>
     </tr>
   </table>
 </div>

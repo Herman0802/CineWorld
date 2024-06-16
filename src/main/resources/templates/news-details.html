@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title th:text="${news.title}"></title>
@@ -7,25 +7,25 @@
 </head>
 <body>
 <a th:href="@{/news}">
-  <img class="back" th:src="@{/images/backward.png}" alt="Back">
+  <img class="back" th:src="@{/images/return-button.png}" alt="Return Button">
 </a>
 
 <div class="header">
   <h1 th:text="${news.title}"></h1>
 </div>
 
-<img th:src="@{${news.contentImageUrl}}" alt="News Image" id="src1">
+<img th:src="@{${news.contentImageUrl}}" alt="Image of News Content" id="src1">
 
 <div th:each="paragraph : ${paragraphs}">
   <p th:text="${paragraph}"></p>
 </div>
-<p>Источник: <span th:text="${news.source}"></span></p>
+<p>Source: <span th:text="${news.source}"></span></p>
 
 <div class="footer">
   <table class="tabl">
     <tr>
-      <td id="tabl1">© 2018 – 2019, Киноман</td>
-      <td id="tabl2">Проект компании Iteen Academy</td>
+      <td id="tabl1">© 2019 – 2024, Cine World</td>
+      <td id="tabl2">A project by Herman Lazarchyk</td>
     </tr>
   </table>
 </div>

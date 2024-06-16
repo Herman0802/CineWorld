@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title th:text="${movie.title}"></title>
@@ -7,7 +7,7 @@
 </head>
 <body>
 <a th:href="@{'/' + ${source}}">
-  <img class="back" th:src="@{/images/backward.png}" alt="Back">
+  <img class="back" th:src="@{/images/return-button.png}" alt="Return Button">
 </a>
 
 <div class="header">
@@ -15,37 +15,37 @@
 </div>
 
 <ul>
-  <li>Режиссер: <span th:text="${movie.director}"></span>;</li>
-  <li>Год создания: <span th:text="${#temporals.format(movie.releaseDate, 'yyyy')}"></span>;</li>
-  <li>Бюджет: $<span id="budget" th:text="${movie.budget}"></span>;</li>
-  <li>Сборы: $<span id="boxOffice" th:text="${movie.boxOffice}"></span>;</li>
-  <li>Отметка IMDb: <span th:text="${movie.imdbRating}"></span>;</li>
-  <li>Трейлер:</li>
+  <li>Director: <span th:text="${movie.director}"></span></li>
+  <li>Year of Release: <span th:text="${#temporals.format(movie.releaseDate, 'yyyy')}"></span></li>
+  <li>Budget: $<span id="budget" th:text="${movie.budget}"></span></li>
+  <li>Box Office: $<span id="boxOffice" th:text="${movie.boxOffice}"></span></li>
+  <li>IMDb Rating: <span th:text="${movie.imdbRating}"></span></li>
+  <li>Trailer:</li>
 </ul>
 
 <iframe width="560" height="315" th:src="${movie.trailerUrl}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<h2>Описание:</h2>
+<h2>Description</h2>
 <div class="content">
   <div th:each="paragraph : ${descriptionParagraphs}">
     <p th:text="${paragraph}"></p>
   </div>
 </div>
 
-<h2>Рецензия:</h2>
+<h2>Review</h2>
 <div class="content">
   <div th:each="paragraph : ${reviewParagraphs}">
     <p th:text="${paragraph}"></p>
   </div>
 </div>
 
-<h2>Личная отметка: <span th:text="${movie.personalRating}"></span>/10.0;</h2>
+<h2>Personal Rating: <span th:text="${movie.personalRating}"></span> / 10.0</h2>
 
 <div class="footer">
   <table class="tabl">
     <tr>
-      <td id="tabl1">© 2018 – 2019, Киноман</td>
-      <td id="tabl2">Проект компании Iteen Academy</td>
+      <td id="tabl1">© 2019 – 2024, Cine World</td>
+      <td id="tabl2">A project by Herman Lazarchyk</td>
     </tr>
   </table>
 </div>
