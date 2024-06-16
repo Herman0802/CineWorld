@@ -1,5 +1,5 @@
 function animateString() {
-    $("#string1").fadeOut(3000).fadeIn(2000, animateString);
+    $("#service-name").fadeOut(3000).fadeIn(2000, animateString);
 }
 
 function formatNumber(id) {

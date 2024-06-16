@@ -20,17 +20,17 @@ public class LoadDatabase {
     @Bean
     CommandLineRunner initDatabase(MovieRepository repository, ResourceLoader resourceLoader) {
         return args -> {
-            String description1 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/movie1_description.txt").getURI())));
-            String review1 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/movie1_review.txt").getURI())));
+            String description1 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/one_flew_cuckoos_nest/description.txt").getURI())));
+            String review1 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/one_flew_cuckoos_nest/review.txt").getURI())));
 
-            String description2 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/movie2_description.txt").getURI())));
-            String review2 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/movie2_review.txt").getURI())));
+            String description2 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/ghost_writer/description.txt").getURI())));
+            String review2 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/ghost_writer/review.txt").getURI())));
 
-            String description3 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/movie3_description.txt").getURI())));
-            String review3 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/movie3_review.txt").getURI())));
+            String description3 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/phantom_thread/description.txt").getURI())));
+            String review3 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/phantom_thread/review.txt").getURI())));
 
-            String description4 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/movie4_description.txt").getURI())));
-            String review4 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/movie4_review.txt").getURI())));
+            String description4 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/no_country_old_men/description.txt").getURI())));
+            String review4 = new String(Files.readAllBytes(Paths.get(resourceLoader.getResource("classpath:data/movies/no_country_old_men/review.txt").getURI())));
 
             repository.save(Movie.builder()
                     .title("Пролетая над гнездом кукушки")

@@ -25,9 +25,9 @@ public class MainController {
         this.newsRepository = newsRepository;
     }
 
-    @RequestMapping({"/", "/reviews"})
+    @RequestMapping({"/", "/movie-reviews"})
     public String index() {
-        return "reviews";
+        return "movie-reviews";
     }
 
     @GetMapping("/movie/{id}")
