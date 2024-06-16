@@ -37,7 +37,7 @@
     </td>
     <td class="rating" th:text="${movie.releaseYear}"></td>
     <td class="rating" th:text="${movie.imdbRating}"></td>
-    <td class="rating" th:text="${movie.votes}"></td>
+    <td class="rating votes" th:text="${movie.votes}"></td>
   </tr>
   </tbody>
 </table>
@@ -52,47 +52,13 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="/functions.js"></script>
 <script>
   $(document).ready(function() {
-    // Start the string animation
-    function animateString() {
-      $("#string1").fadeOut(3000).fadeIn(2000, animateString);
-    }
-
     animateString();
-
-    // Sort the table
     sortTable();
+    formatVotes();
   });
-
-  function sortTable() {
-    let table = document.getElementById('ratingTable').getElementsByTagName('tbody')[0];
-    let rows = Array.from(table.rows);
-
-    rows.sort((a, b) => {
-      let ratingA = parseFloat(a.cells[3].innerText);
-      let ratingB = parseFloat(b.cells[3].innerText);
-      let votesA = parseInt(a.cells[4].innerText);
-      let votesB = parseInt(b.cells[4].innerText);
-
-      if (ratingA !== ratingB) {
-        return ratingB - ratingA; // Sort in descending order by rating
-      } else {
-        return votesB - votesA; // Sort in descending order by number of votes
-      }
-    });
-
-    // Remove all rows
-    while (table.firstChild) {
-      table.removeChild(table.firstChild);
-    }
-
-    // Add sorted rows with position numbers
-    rows.forEach((row, index) => {
-      row.cells[0].innerText = (index + 1).toString(); // Set the position number as a string
-      table.appendChild(row);
-    });
-  }
 </script>
 </body>
 </html>

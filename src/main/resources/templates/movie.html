@@ -15,8 +15,8 @@
 </div>
 
 <ul>
-  <li>Режиссер: <span th:text="${movie.director}"></span>; </li>
-  <li>Год создание: <span th:text="${movie.releaseYear}"></span>; </li>
+  <li>Режиссер: <span th:text="${movie.director}"></span>;</li>
+  <li>Год создание: <span th:text="${movie.releaseYear}"></span>;</li>
   <li>Бюджет: $<span id="budget" th:text="${movie.budget}"></span>;</li>
   <li>Сборы: $<span id="boxOffice" th:text="${movie.boxOffice}"></span>;</li>
   <li>Отметка IMDb: <span th:text="${movie.imdbRating}"></span>;</li>
@@ -31,7 +31,7 @@
 <h2>Рецензия:</h2>
 <p class="review" th:utext="${movie.review}"></p>
 
-<h2>Личная отметка: <span th:text="${movie.personalRating}"></span>;</h2>
+<h2>Личная отметка: <span th:text="${movie.personalRating}"></span>/10.0;</h2>
 
 <div class="footer">
   <table class="tabl">
@@ -43,17 +43,12 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="/functions.js"></script>
 <script>
   $(document).ready(function() {
     formatNumber('budget');
     formatNumber('boxOffice');
   });
-
-  function formatNumber(id) {
-    const element = document.getElementById(id);
-    const number = parseInt(element.innerText, 10);
-    element.innerText = number.toLocaleString('en-US').replace(/,/g, ' ');
-  }
 </script>
 </body>
 </html>
