@@ -25,10 +25,10 @@ public class Movie {
     private String title;
     private String director;
     private int releaseYear;
-    private String budget;
-    private String boxOffice;
-    private String kinopoiskRating;
-    private String imdbRating;
+    private long budget;
+    private long boxOffice;
+    private float imdbRating;
+    private int votes;
     private String trailerUrl;
 
     @Column(length = 1000)
@@ -36,5 +36,9 @@ public class Movie {
     @Column(length = 4000)
     private String review;
 
-    private String personalRating;
+    private float personalRating;
+
+    public boolean hasReview() {
+        return (this.review != null) && !this.review.isEmpty();
+    }
 }

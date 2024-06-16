@@ -8,6 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -24,9 +27,10 @@ public class MainController {
     }
 
     @GetMapping("/movie/{id}")
-    public String movie(@PathVariable("id") Long id, Model model) {
+    public String movie(@PathVariable("id") Long id, @RequestParam("source") String source, Model model) {
         Movie movie = movieRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid movie Id:" + id));
         model.addAttribute("movie", movie);
+        model.addAttribute("source", source);
         return "movie";
     }
 
@@ -56,7 +60,9 @@ public class MainController {
     }
 
     @GetMapping("/rating")
-    public String rating() {
+    public String rating(Model model) {
+        List<Movie> movies = movieRepository.findAll();
+        model.addAttribute("movies", movies);
         return "rating";
     }
 
