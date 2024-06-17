@@ -2,44 +2,44 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Cine World</title>
+  <title>Cine World – Upcoming Premieres</title>
   <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
-<div class="header">
+<div class="logo">
   <h1 id="service-name">Cine World</h1>
 </div>
 
-<div class="navbar">
-  <a th:href="@{/reviews}" class="navbar">Reviews</a>
-  <a th:href="@{/news}" class="navbar">News</a>
-  <a th:href="@{/rating}" class="navbar">Movie Rating</a>
-  <a th:href="@{/premieres}" class="navbar">Premieres</a>
-  <a th:href="@{/enter}" class="navbar" id="enter">Login</a>
+<div class="navigation-bar">
+  <a th:href="@{/reviews}" class="navigation-bar">Reviews</a>
+  <a th:href="@{/news}" class="navigation-bar">News</a>
+  <a th:href="@{/rating}" class="navigation-bar">Movie Rating</a>
+  <a th:href="@{/premieres}" class="navigation-bar">Premieres</a>
+  <a th:href="@{/share}" class="navigation-bar" id="share">Share</a>
 </div>
 
-<table class="table" style="width:100%">
+<table class="movie-premieres-table" style="width:100%">
   <thead>
-  <tr class="rating">
-    <th class="table1">#</th>
-    <th class="table1">Movie</th>
-    <th class="table1">Release Date</th>
+  <tr class="movie-premieres-table">
+    <th class="number-column">#</th>
+    <th class="title-column">Movie</th>
+    <th class="release-date-column">Release Date</th>
   </tr>
   </thead>
   <tbody>
-  <tr th:each="movie, iterStat : ${movies}" class="rating">
-    <td class="rating" th:text="${iterStat.index + 1}"></td>
-    <td class="rating" th:text="${movie.title}"></td>
-    <td class="rating" th:text="${#temporals.format(movie.releaseDate, 'dd MMMM yyyy')}"></td>
+  <tr th:each="movie, iterStat : ${movies}" class="movie-premieres-table">
+    <td class="movie-premieres-table number-column" th:text="${iterStat.index + 1}"></td>
+    <td class="movie-premieres-table title-column" th:text="${movie.title}"></td>
+    <td class="movie-premieres-table release-date-column" th:text="${#temporals.format(movie.releaseDate, 'dd MMMM yyyy')}"></td>
   </tr>
   </tbody>
 </table>
 
 <div class="footer">
-  <table class="tabl">
+  <table class="footer-table">
     <tr>
-      <td id="tabl1">© 2019 – 2024, Cine World</td>
-      <td id="tabl2">Designed by Herman Lazarchyk in Cracow</td>
+      <td id="left-footer-part">© 2019 – 2024, Cine World</td>
+      <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
     </tr>
   </table>
 </div>

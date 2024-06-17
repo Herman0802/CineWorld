@@ -85,8 +85,8 @@ public class MediaContentController {
         return "premieres";
     }
 
-    @GetMapping("/enter")
-    public String enter() {
-        return "enter";
+    @GetMapping("/share")
+    public String share() {
+        return "share";
     }
 }

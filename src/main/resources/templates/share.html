@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cine World – Share Project</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<div class="logo">
+    <h1 id="service-name">Cine World</h1>
+</div>
+
+<div class="navigation-bar">
+    <a th:href="@{/reviews}" class="navigation-bar">Reviews</a>
+    <a th:href="@{/news}" class="navigation-bar">News</a>
+    <a th:href="@{/rating}" class="navigation-bar">Movie Rating</a>
+    <a th:href="@{/premieres}" class="navigation-bar">Premieres</a>
+    <a th:href="@{/share}" class="navigation-bar" id="share">Share</a>
+</div>
+
+<div class="content">
+    <h2>Share Cine World</h2>
+    <p>Scan the QR code below to visit our GitHub project:</p>
+    <img class="qr-code-images" th:src="@{/images/qr-code.png}" alt="GitHub Project QR Code">
+</div>
+
+<div class="footer">
+    <table class="footer-table">
+        <tr>
+            <td id="left-footer-part">© 2019 – 2024, Cine World</td>
+            <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
+        </tr>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="/functions.js"></script>
+<script>
+    $(document).ready(function() {
+        animateString();
+    });
+</script>
+</body>
+</html>

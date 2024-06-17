@@ -4,14 +4,20 @@ function animateString() {
 
 function formatNumber(id) {
     const element = document.getElementById(id);
-    const number = parseInt(element.innerText, 10);
-    element.innerText = number.toLocaleString('en-US').replace(/,/g, ' ');
+    if (element) {
+        const number = parseInt(element.innerText, 10);
+        if (!isNaN(number)) {
+            element.innerText = number.toLocaleString('en').replace(/,/g, ' ');
+        }
+    }
 }
 
 function formatVotes() {
-    const voteElements = document.querySelectorAll('.votes');
+    const voteElements = document.querySelectorAll('.votes-column');
     voteElements.forEach(element => {
         const votes = parseInt(element.innerText, 10);
-        element.innerText = votes.toLocaleString('en-US').replace(/,/g, ' ');
+        if (!isNaN(votes)) {
+            element.innerText = votes.toLocaleString('en').replace(/,/g, ' ');
+        }
     });
 }

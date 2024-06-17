@@ -7,14 +7,14 @@
 </head>
 <body>
 <a th:href="@{/news}">
-  <img class="back" th:src="@{/images/return-button.png}" alt="Return Button">
+  <img class="return-button" th:src="@{/images/return-button.png}" alt="Return Button">
 </a>
 
-<div class="header">
+<div class="logo">
   <h1 th:text="${news.title}"></h1>
 </div>
 
-<img th:src="@{${news.contentImageUrl}}" alt="Image of News Content" id="src1">
+<img class="news-content-images" th:src="@{${news.contentImageUrl}}" alt="Image of News Content">
 
 <div th:each="paragraph : ${paragraphs}">
   <p th:text="${paragraph}"></p>
@@ -22,10 +22,10 @@
 <p>Source: <span th:text="${news.source}"></span></p>
 
 <div class="footer">
-  <table class="tabl">
+  <table class="footer-table">
     <tr>
-      <td id="tabl1">© 2019 – 2024, Cine World</td>
-      <td id="tabl2">Designed by Herman Lazarchyk in Cracow</td>
+      <td id="left-footer-part">© 2019 – 2024, Cine World</td>
+      <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
     </tr>
   </table>
 </div>

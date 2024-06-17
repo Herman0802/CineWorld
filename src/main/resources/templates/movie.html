@@ -7,10 +7,10 @@
 </head>
 <body>
 <a th:href="@{'/' + ${source}}">
-  <img class="back" th:src="@{/images/return-button.png}" alt="Return Button">
+  <img class="return-button" th:src="@{/images/return-button.png}" alt="Return Button">
 </a>
 
-<div class="header">
+<div class="logo">
   <h1 th:text="${movie.title}"></h1>
 </div>
 
@@ -42,10 +42,10 @@
 <h2>Personal Rating: <span th:text="${movie.personalRating}"></span> / 10.0</h2>
 
 <div class="footer">
-  <table class="tabl">
+  <table class="footer-table">
     <tr>
-      <td id="tabl1">© 2019 – 2024, Cine World</td>
-      <td id="tabl2">Designed by Herman Lazarchyk in Cracow</td>
+      <td id="left-footer-part">© 2019 – 2024, Cine World</td>
+      <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
     </tr>
   </table>
 </div>

@@ -2,51 +2,51 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Cine World</title>
+  <title>Cine World – Movie Rating</title>
   <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
-<div class="header">
+<div class="logo">
   <h1 id="service-name">Cine World</h1>
 </div>
 
-<div class="navbar">
-  <a th:href="@{/reviews}" class="navbar">Reviews</a>
-  <a th:href="@{/news}" class="navbar">News</a>
-  <a th:href="@{/rating}" class="navbar">Movie Rating</a>
-  <a th:href="@{/premieres}" class="navbar">Premieres</a>
-  <a th:href="@{/enter}" class="navbar" id="enter">Login</a>
+<div class="navigation-bar">
+  <a th:href="@{/reviews}" class="navigation-bar">Reviews</a>
+  <a th:href="@{/news}" class="navigation-bar">News</a>
+  <a th:href="@{/rating}" class="navigation-bar">Movie Rating</a>
+  <a th:href="@{/premieres}" class="navigation-bar">Premieres</a>
+  <a th:href="@{/share}" class="navigation-bar" id="share">Share</a>
 </div>
 
-<table id="ratingTable" class="table" style="width:100%">
+<table class="movie-rating-table" style="width:100%">
   <thead>
-  <tr class="rating">
-    <th class="table1">#</th>
-    <th class="table1">Movie</th>
-    <th class="table1">Year</th>
-    <th class="table1">Rating</th>
-    <th class="table1">Votes</th>
+  <tr class="movie-rating-table">
+    <th class="number-column">#</th>
+    <th class="title-column">Movie</th>
+    <th class="year-column">Year</th>
+    <th class="rating-column">Rating</th>
+    <th class="votes-column">Votes</th>
   </tr>
   </thead>
   <tbody>
-  <tr th:each="movie, iterStat : ${movies}" class="rating">
-    <td class="rating" th:text="${iterStat.index + 1}"></td>
-    <td class="rating">
+  <tr th:each="movie, iterStat : ${movies}" class="movie-rating-table">
+    <td class="movie-rating-table number-column" th:text="${iterStat.index + 1}"></td>
+    <td class="movie-rating-table title-column">
       <a th:if="${movie.hasReview()}" th:href="@{/movie/{id}(id=${movie.id}, source='rating')}" th:text="${movie.title}"></a>
       <span th:if="${!movie.hasReview()}" th:text="${movie.title}"></span>
     </td>
-    <td class="rating" th:text="${#temporals.format(movie.releaseDate, 'yyyy')}"></td>
-    <td class="rating" th:text="${movie.imdbRating}"></td>
-    <td class="rating votes" th:text="${movie.votes}"></td>
+    <td class="movie-rating-table year-column" th:text="${#temporals.format(movie.releaseDate, 'yyyy')}"></td>
+    <td class="movie-rating-table rating-column" th:text="${movie.imdbRating}"></td>
+    <td class="movie-rating-table votes-column" th:text="${movie.votes}"></td>
   </tr>
   </tbody>
 </table>
 
 <div class="footer">
-  <table class="tabl">
+  <table class="footer-table">
     <tr>
-      <td id="tabl1">© 2019 – 2024, Cine World</td>
-      <td id="tabl2">Designed by Herman Lazarchyk in Cracow</td>
+      <td id="left-footer-part">© 2019 – 2024, Cine World</td>
+      <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
     </tr>
   </table>
 </div>

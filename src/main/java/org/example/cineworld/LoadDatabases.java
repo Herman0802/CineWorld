@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 
 @Configuration
-public class LoadDatabase {
+public class LoadDatabases {
 
     @Bean
     CommandLineRunner initMoviesDatabase(MoviesRepository repository, ResourceLoader resourceLoader) {
@@ -276,7 +276,7 @@ public class LoadDatabase {
                     .build());
 
             newsRepository.save(News.builder()
-                    .title("Quentin Tarantino Reflects on Working with Robert De Niro in 'Jackie Brown")
+                    .title("Quentin Tarantino Reflects on Working with Robert De Niro in \"Jackie Brown\"")
                     .coverImageUrl("/images/news/quentin_tarantino_robert_de_niro/cover.jpg")
                     .publicationDate(LocalDate.of(2024, 6, 14))
                     .contentImageUrl("/images/news/quentin_tarantino_robert_de_niro/content.jpg")
