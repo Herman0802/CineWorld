@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title th:text="${movie.title}"></title>
-  <link rel="stylesheet" th:href="@{/styles.css}">
+    <meta charset="UTF-8">
+    <title th:text="${movie.title}"></title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
 <a th:href="@{'/' + ${source}}">
-  <img class="return-button" th:src="@{/images/return-button.png}" alt="Return Button">
+    <img class="return-button" th:src="@{/images/return-button.png}" alt="Return Button">
 </a>
 
 <div class="logo">
-  <h1 th:text="${movie.title}"></h1>
+    <h1 th:text="${movie.title}"></h1>
 </div>
 
 <ul>
-  <li>Director: <span th:text="${movie.director}"></span></li>
-  <li>Year of Release: <span th:text="${#temporals.format(movie.releaseDate, 'yyyy')}"></span></li>
-  <li>Budget: $<span id="budget" th:text="${movie.budget}"></span></li>
-  <li>Box Office: $<span id="boxOffice" th:text="${movie.boxOffice}"></span></li>
-  <li>IMDb Rating: <span th:text="${movie.imdbRating}"></span></li>
-  <li>Trailer:</li>
+    <li>Director: <span th:text="${movie.director}"></span></li>
+    <li>Year of Release: <span th:text="${#temporals.format(movie.releaseDate, 'yyyy')}"></span></li>
+    <li>Budget: $<span id="budget" th:text="${movie.budget}"></span></li>
+    <li>Box Office: $<span id="boxOffice" th:text="${movie.boxOffice}"></span></li>
+    <li>IMDb Rating: <span th:text="${movie.imdbRating}"></span></li>
+    <li>Trailer:</li>
 </ul>
 
 <iframe width="560" height="315" th:src="${movie.trailerUrl}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2>Description</h2>
 <div class="content">
-  <div th:each="paragraph : ${descriptionParagraphs}">
-    <p th:text="${paragraph}"></p>
-  </div>
+    <div th:each="paragraph : ${descriptionParagraphs}">
+        <p th:text="${paragraph}"></p>
+    </div>
 </div>
 
 <h2>Review</h2>
 <div class="content">
-  <div th:each="paragraph : ${reviewParagraphs}">
-    <p th:text="${paragraph}"></p>
-  </div>
+    <div th:each="paragraph : ${reviewParagraphs}">
+        <p th:text="${paragraph}"></p>
+    </div>
 </div>
 
 <h2>Personal Rating: <span th:text="${movie.personalRating}"></span> / 10.0</h2>
 
 <div class="footer">
-  <table class="footer-table">
-    <tr>
-      <td id="left-footer-part">© 2019 – 2024, Cine World</td>
-      <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
-    </tr>
-  </table>
+    <table class="footer-table">
+        <tr>
+            <td id="left-footer-part">© 2019 – 2024, Cine World</td>
+            <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
+        </tr>
+    </table>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 <script src="/functions.js"></script>
 <script>
-  $(document).ready(function() {
-    formatNumber('budget');
-    formatNumber('boxOffice');
-  });
+    $(document).ready(function() {
+        formatNumber('budget');
+        formatNumber('boxOffice');
+    });
 </script>
 </body>
 </html>

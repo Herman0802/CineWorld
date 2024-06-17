@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Cine World – Movie Rating</title>
-  <link rel="stylesheet" th:href="@{/styles.css}">
+    <meta charset="UTF-8">
+    <title>Cine World – Movie Rating</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
 <div class="logo">
-  <h1 id="service-name">Cine World</h1>
+    <a th:href="@{/}" class="logo-link">
+        <h1 id="service-name">Cine World</h1>
+    </a>
 </div>
 
 <div class="navigation-bar">
-  <a th:href="@{/reviews}" class="navigation-bar">Reviews</a>
-  <a th:href="@{/news}" class="navigation-bar">News</a>
-  <a th:href="@{/rating}" class="navigation-bar">Movie Rating</a>
-  <a th:href="@{/premieres}" class="navigation-bar">Premieres</a>
-  <a th:href="@{/share}" class="navigation-bar" id="share">Share</a>
+    <a th:href="@{/reviews}" class="navigation-bar">Reviews</a>
+    <a th:href="@{/news}" class="navigation-bar">News</a>
+    <a th:href="@{/rating}" class="navigation-bar">Movie Rating</a>
+    <a th:href="@{/premieres}" class="navigation-bar">Premieres</a>
+    <a th:href="@{/share}" class="navigation-bar" id="share">Share</a>
 </div>
 
 <table class="movie-rating-table" style="width:100%">
-  <thead>
-  <tr class="movie-rating-table">
-    <th class="number-column">#</th>
-    <th class="title-column">Movie</th>
-    <th class="year-column">Year</th>
-    <th class="rating-column">Rating</th>
-    <th class="votes-column">Votes</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="movie, iterStat : ${movies}" class="movie-rating-table">
-    <td class="movie-rating-table number-column" th:text="${iterStat.index + 1}"></td>
-    <td class="movie-rating-table title-column">
-      <a th:if="${movie.hasReview()}" th:href="@{/movie/{id}(id=${movie.id}, source='rating')}" th:text="${movie.title}"></a>
-      <span th:if="${!movie.hasReview()}" th:text="${movie.title}"></span>
-    </td>
-    <td class="movie-rating-table year-column" th:text="${#temporals.format(movie.releaseDate, 'yyyy')}"></td>
-    <td class="movie-rating-table rating-column" th:text="${movie.imdbRating}"></td>
-    <td class="movie-rating-table votes-column" th:text="${movie.votes}"></td>
-  </tr>
-  </tbody>
+    <thead>
+    <tr class="movie-rating-table">
+        <th class="number-column">#</th>
+        <th class="title-column">Movie</th>
+        <th class="year-column">Year</th>
+        <th class="rating-column">Rating</th>
+        <th class="votes-column">Votes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="movie, iterStat : ${movies}" class="movie-rating-table">
+        <td class="movie-rating-table number-column" th:text="${iterStat.index + 1}"></td>
+        <td class="movie-rating-table title-column">
+            <a th:if="${movie.hasReview()}" th:href="@{/movie/{id}(id=${movie.id}, source='rating')}" th:text="${movie.title}"></a>
+            <span th:if="${!movie.hasReview()}" th:text="${movie.title}"></span>
+        </td>
+        <td class="movie-rating-table year-column" th:text="${#temporals.format(movie.releaseDate, 'yyyy')}"></td>
+        <td class="movie-rating-table rating-column" th:text="${movie.imdbRating}"></td>
+        <td class="movie-rating-table votes-column" th:text="${movie.votes}"></td>
+    </tr>
+    </tbody>
 </table>
 
 <div class="footer">
-  <table class="footer-table">
-    <tr>
-      <td id="left-footer-part">© 2019 – 2024, Cine World</td>
-      <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
-    </tr>
-  </table>
+    <table class="footer-table">
+        <tr>
+            <td id="left-footer-part">© 2019 – 2024, Cine World</td>
+            <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
+        </tr>
+    </table>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 <script src="/functions.js"></script>
 <script>
-  $(document).ready(function() {
-    animateString();
-    formatVotes();
-  });
+    $(document).ready(function() {
+        animateString();
+        formatVotes();
+    });
 </script>
 </body>
 </html>

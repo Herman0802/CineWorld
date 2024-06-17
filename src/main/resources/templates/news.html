@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Cine World – Latest News</title>
-  <link rel="stylesheet" th:href="@{/styles.css}">
+    <meta charset="UTF-8">
+    <title>Cine World – Latest News</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
 <div class="logo">
-  <h1 id="service-name">Cine World</h1>
+    <a th:href="@{/}" class="logo-link">
+        <h1 id="service-name">Cine World</h1>
+    </a>
 </div>
 
 <div class="navigation-bar">
-  <a th:href="@{/reviews}" class="navigation-bar">Reviews</a>
-  <a th:href="@{/news}" class="navigation-bar">News</a>
-  <a th:href="@{/rating}" class="navigation-bar">Movie Rating</a>
-  <a th:href="@{/premieres}" class="navigation-bar">Premieres</a>
-  <a th:href="@{/share}" class="navigation-bar" id="share">Share</a>
+    <a th:href="@{/reviews}" class="navigation-bar">Reviews</a>
+    <a th:href="@{/news}" class="navigation-bar">News</a>
+    <a th:href="@{/rating}" class="navigation-bar">Movie Rating</a>
+    <a th:href="@{/premieres}" class="navigation-bar">Premieres</a>
+    <a th:href="@{/share}" class="navigation-bar" id="share">Share</a>
 </div>
 
 <div th:each="newsItem : ${newsList}" class="thematic-section top-margin">
-  <img th:src="@{${newsItem.coverImageUrl}}" alt="News Cover Image">
-  <a th:href="@{/news/{id}(id=${newsItem.id})}">
-    <h2 th:text="${newsItem.title}"></h2>
-  </a>
-  <p class="date" th:text="${#temporals.format(newsItem.publicationDate, 'dd.MM.yyyy')}"></p>
+    <img th:src="@{${newsItem.coverImageUrl}}" alt="News Cover Image">
+    <a th:href="@{/news/{id}(id=${newsItem.id})}">
+        <h2 th:text="${newsItem.title}"></h2>
+    </a>
+    <p class="date" th:text="${#temporals.format(newsItem.publicationDate, 'dd.MM.yyyy')}"></p>
 </div>
 
 <div class="footer">
-  <table class="footer-table">
-    <tr>
-      <td id="left-footer-part">© 2019 – 2024, Cine World</td>
-      <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
-    </tr>
-  </table>
+    <table class="footer-table">
+        <tr>
+            <td id="left-footer-part">© 2019 – 2024, Cine World</td>
+            <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
+        </tr>
+    </table>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 <script src="/functions.js"></script>
 <script>
-  $(document).ready(function() {
-    animateString();
-  });
+    $(document).ready(function() {
+        animateString();
+    });
 </script>
 </body>
 </html>

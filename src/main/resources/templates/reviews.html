@@ -1,66 +1,68 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Cine World – Movie Reviews</title>
-  <link rel="stylesheet" th:href="@{/styles.css}">
+    <meta charset="UTF-8">
+    <title>Cine World – Movie Reviews</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
 <div class="logo">
-  <h1 id="service-name">Cine World</h1>
+    <a th:href="@{/}" class="logo-link">
+        <h1 id="service-name">Cine World</h1>
+    </a>
 </div>
 
 <div class="navigation-bar">
-  <a th:href="@{/reviews}" class="navigation-bar">Reviews</a>
-  <a th:href="@{/news}" class="navigation-bar">News</a>
-  <a th:href="@{/rating}" class="navigation-bar">Movie Rating</a>
-  <a th:href="@{/premieres}" class="navigation-bar">Premieres</a>
-  <a th:href="@{/share}" class="navigation-bar" id="share">Share</a>
+    <a th:href="@{/reviews}" class="navigation-bar">Reviews</a>
+    <a th:href="@{/news}" class="navigation-bar">News</a>
+    <a th:href="@{/rating}" class="navigation-bar">Movie Rating</a>
+    <a th:href="@{/premieres}" class="navigation-bar">Premieres</a>
+    <a th:href="@{/share}" class="navigation-bar" id="share">Share</a>
 </div>
 
 <div class="thematic-section top-margin">
-  <img th:src="@{/images/movies/one-flew-cuckoos-nest.jpg}" alt="One Flew Over the Cuckoo's Nest">
-  <a th:href="@{/movie/1(source='reviews')}"><h2>"If he's crazy, what does that make you?"</h2></a>
-  <p>Adaptation of Ken Kesey's cult novel that revolutionized the world of cinema.</p>
-  <p>20.09.2019</p>
+    <img th:src="@{/images/movies/one-flew-cuckoos-nest.jpg}" alt="One Flew Over the Cuckoo's Nest">
+    <a th:href="@{/movie/1(source='reviews')}"><h2>"If he's crazy, what does that make you?"</h2></a>
+    <p>Adaptation of Ken Kesey's cult novel that revolutionized the world of cinema.</p>
+    <p>20.09.2019</p>
 </div>
 
 <div class="thematic-section">
-  <img th:src="@{/images/movies/ghost-writer.jpg}" alt="The Ghost Writer">
-  <a th:href="@{/movie/2(source='reviews')}"><h2>"His work is your biography"</h2></a>
-  <p>A film that gained attention amid the Polanski scandal, but is noteworthy on its own.</p>
-  <p>12.02.2020</p>
+    <img th:src="@{/images/movies/ghost-writer.jpg}" alt="The Ghost Writer">
+    <a th:href="@{/movie/2(source='reviews')}"><h2>"His work is your biography"</h2></a>
+    <p>A film that gained attention amid the Polanski scandal, but is noteworthy on its own.</p>
+    <p>12.02.2020</p>
 </div>
 
 <div class="thematic-section">
-  <img th:src="@{/images/movies/phantom-thread.jpg}" alt="Phantom Thread">
-  <a th:href="@{/movie/3(source='reviews')}"><h2>"When you love someone, you can't just forget about it"</h2></a>
-  <p>A subtle and rich film, distinct from its genre counterparts.</p>
-  <p>07.04.2021</p>
+    <img th:src="@{/images/movies/phantom-thread.jpg}" alt="Phantom Thread">
+    <a th:href="@{/movie/3(source='reviews')}"><h2>"When you love someone, you can't just forget about it"</h2></a>
+    <p>A subtle and rich film, distinct from its genre counterparts.</p>
+    <p>07.04.2021</p>
 </div>
 
 <div class="thematic-section">
-  <img th:src="@{/images/movies/no-country-old-men.jpg}" alt="No Country for Old Men">
-  <a th:href="@{/movie/4(source='reviews')}"><h2>"You can't come out of water dry"</h2></a>
-  <p>A philosophical parable set against the backdrop of a psychological thriller.</p>
-  <p>30.06.2022</p>
+    <img th:src="@{/images/movies/no-country-old-men.jpg}" alt="No Country for Old Men">
+    <a th:href="@{/movie/4(source='reviews')}"><h2>"You can't come out of water dry"</h2></a>
+    <p>A philosophical parable set against the backdrop of a psychological thriller.</p>
+    <p>30.06.2022</p>
 </div>
 
 <div class="footer">
-  <table class="footer-table">
-    <tr>
-      <td id="left-footer-part">© 2019 – 2024, Cine World</td>
-      <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
-    </tr>
-  </table>
+    <table class="footer-table">
+        <tr>
+            <td id="left-footer-part">© 2019 – 2024, Cine World</td>
+            <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
+        </tr>
+    </table>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 <script src="/functions.js"></script>
 <script>
-  $(document).ready(function() {
-    animateString();
-  });
+    $(document).ready(function() {
+        animateString();
+    });
 </script>
 </body>
 </html>

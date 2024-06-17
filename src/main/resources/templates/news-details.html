@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title th:text="${news.title}"></title>
-  <link rel="stylesheet" th:href="@{/styles.css}">
+    <meta charset="UTF-8">
+    <title th:text="${news.title}"></title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
 <a th:href="@{/news}">
-  <img class="return-button" th:src="@{/images/return-button.png}" alt="Return Button">
+    <img class="return-button" th:src="@{/images/return-button.png}" alt="Return Button">
 </a>
 
 <div class="logo">
-  <h1 th:text="${news.title}"></h1>
+    <h1 th:text="${news.title}"></h1>
 </div>
 
 <img class="news-content-images" th:src="@{${news.contentImageUrl}}" alt="Image of News Content">
 
 <div th:each="paragraph : ${paragraphs}">
-  <p th:text="${paragraph}"></p>
+    <p th:text="${paragraph}"></p>
 </div>
 <p>Source: <span th:text="${news.source}"></span></p>
 
 <div class="footer">
-  <table class="footer-table">
-    <tr>
-      <td id="left-footer-part">© 2019 – 2024, Cine World</td>
-      <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
-    </tr>
-  </table>
+    <table class="footer-table">
+        <tr>
+            <td id="left-footer-part">© 2019 – 2024, Cine World</td>
+            <td id="right-footer-part">Designed by Herman Lazarchyk in Cracow</td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
