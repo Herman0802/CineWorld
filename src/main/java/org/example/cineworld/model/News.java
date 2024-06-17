@@ -18,8 +18,8 @@ public class News {
 
     private String title;
     private String coverImageUrl;
-    private String contentImageUrl;
     private LocalDate publicationDate;
+    private String contentImageUrl;
 
     @Column(length = 1500)
     private String content;

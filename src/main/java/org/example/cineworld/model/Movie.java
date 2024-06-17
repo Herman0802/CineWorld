@@ -21,16 +21,17 @@ public class Movie {
     private LocalDate releaseDate;
     private long budget;
     private long boxOffice;
-    private float imdbRating;
-    private int votes;
-    private String trailerUrl;
 
     @Column(length = 1000)
     private String description;
+
+    private String trailerUrl;
+    private float imdbRating;
+    private int votes;
+    private float personalRating;
+
     @Column(length = 4000)
     private String review;
-
-    private float personalRating;
 
     public boolean hasReview() {
         return (this.review != null) && !this.review.isEmpty();

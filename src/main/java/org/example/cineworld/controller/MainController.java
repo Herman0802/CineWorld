@@ -2,7 +2,7 @@ package org.example.cineworld.controller;
 
 import org.example.cineworld.model.Movie;
 import org.example.cineworld.model.News;
-import org.example.cineworld.repository.MovieRepository;
+import org.example.cineworld.repository.MoviesRepository;
 import org.example.cineworld.repository.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,12 +16,12 @@ import java.util.stream.Collectors;
 
 @Controller
 public class MainController {
-    private final MovieRepository movieRepository;
+    private final MoviesRepository moviesRepository;
     private final NewsRepository newsRepository;
 
     @Autowired
-    public MainController(MovieRepository movieRepository, NewsRepository newsRepository) {
-        this.movieRepository = movieRepository;
+    public MainController(MoviesRepository moviesRepository, NewsRepository newsRepository) {
+        this.moviesRepository = moviesRepository;
         this.newsRepository = newsRepository;
     }
 
@@ -32,7 +32,7 @@ public class MainController {
 
     @GetMapping("/movie/{id}")
     public String movie(@PathVariable("id") Long id, @RequestParam("source") String source, Model model) {
-        Movie movie = movieRepository.findById(id)
+        Movie movie = moviesRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid movie Id:" + id));
 
         // Podział opisu i recenzji na akapity na podstawie pojedynczego znaku nowej linii
@@ -49,6 +49,7 @@ public class MainController {
     @GetMapping("/news")
     public String news(Model model) {
         List<News> newsList = newsRepository.findAll();
+        newsList.sort(Comparator.comparing(News::getPublicationDate).reversed());
         model.addAttribute("newsList", newsList);
         return "news";
     }
@@ -67,7 +68,7 @@ public class MainController {
 
     @GetMapping("/rating")
     public String rating(Model model) {
-        List<Movie> movies = movieRepository.findAll().stream()
+        List<Movie> movies = moviesRepository.findAll().stream()
                 .sorted(Comparator.comparing(Movie::getImdbRating).reversed()
                         .thenComparing(Comparator.comparing(Movie::getVotes).reversed()))
                 .collect(Collectors.toList());
@@ -77,7 +78,7 @@ public class MainController {
 
     @GetMapping("/premieres")
     public String poster(Model model) {
-        List<Movie> upcomingMovies = movieRepository.findAll().stream()
+        List<Movie> upcomingMovies = moviesRepository.findAll().stream()
                 .filter(movie -> (movie.getReleaseDate() != null) && movie.getReleaseDate().isAfter(LocalDate.now()))
                 .sorted(Comparator.comparing(Movie::getReleaseDate))
                 .collect(Collectors.toList());
