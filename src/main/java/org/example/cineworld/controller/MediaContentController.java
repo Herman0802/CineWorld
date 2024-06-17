@@ -15,18 +15,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-public class MainController {
+public class MediaContentController {
     private final MoviesRepository moviesRepository;
     private final NewsRepository newsRepository;
 
     @Autowired
-    public MainController(MoviesRepository moviesRepository, NewsRepository newsRepository) {
+    public MediaContentController(MoviesRepository moviesRepository, NewsRepository newsRepository) {
         this.moviesRepository = moviesRepository;
         this.newsRepository = newsRepository;
     }
 
     @RequestMapping({"/", "/reviews"})
-    public String index() {
+    public String reviews() {
         return "reviews";
     }
 
@@ -35,7 +35,6 @@ public class MainController {
         Movie movie = moviesRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid movie Id:" + id));
 
-        // Podział opisu i recenzji na akapity na podstawie pojedynczego znaku nowej linii
         String[] descriptionParagraphs = movie.getDescription().split("\\r?\\n");
         String[] reviewParagraphs = movie.getReview().split("\\r?\\n");
 
@@ -55,10 +54,9 @@ public class MainController {
     }
 
     @GetMapping("/news/{id}")
-    public String newsDetail(@PathVariable("id") Long id, Model model) {
+    public String newsDetails(@PathVariable("id") Long id, Model model) {
         News news = newsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid news Id:" + id));
 
-        // Podział treści na akapity na podstawie pojedynczego znaku nowej linii
         String[] paragraphs = news.getContent().split("\\r?\\n");
         model.addAttribute("news", news);
         model.addAttribute("paragraphs", paragraphs);
@@ -69,6 +67,7 @@ public class MainController {
     @GetMapping("/rating")
     public String rating(Model model) {
         List<Movie> movies = moviesRepository.findAll().stream()
+                .filter(movie -> (movie.getImdbRating() != 0) && (movie.getVotes() != 0))
                 .sorted(Comparator.comparing(Movie::getImdbRating).reversed()
                         .thenComparing(Comparator.comparing(Movie::getVotes).reversed()))
                 .collect(Collectors.toList());

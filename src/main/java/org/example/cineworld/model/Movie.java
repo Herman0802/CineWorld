@@ -28,10 +28,11 @@ public class Movie {
     private String trailerUrl;
     private float imdbRating;
     private int votes;
-    private float personalRating;
 
     @Column(length = 4000)
     private String review;
+
+    private float personalRating;
 
     public boolean hasReview() {
         return (this.review != null) && !this.review.isEmpty();

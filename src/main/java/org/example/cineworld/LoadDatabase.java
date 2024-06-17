@@ -38,10 +38,10 @@ public class LoadDatabase {
                     .releaseDate(LocalDate.of(1975, 11, 19))
                     .budget(3_000_000)
                     .boxOffice(108_981_275)
+                    .description(description1)
+                    .trailerUrl("https://www.youtube.com/embed/OXrcDonY-B8")
                     .imdbRating(8.70f)
                     .votes(1_077_015)
-                    .trailerUrl("https://www.youtube.com/embed/OXrcDonY-B8")
-                    .description(description1)
                     .review(review1)
                     .personalRating(9F)
                     .build());
@@ -52,10 +52,10 @@ public class LoadDatabase {
                     .releaseDate(LocalDate.of(2010, 2, 12))
                     .budget(45_000_000)
                     .boxOffice(60_222_298)
+                    .description(description2)
+                    .trailerUrl("https://www.youtube.com/embed/B3NrIz5lwVo")
                     .imdbRating(7.20f)
                     .votes(171_171)
-                    .trailerUrl("https://www.youtube.com/embed/B3NrIz5lwVo")
-                    .description(description2)
                     .review(review2)
                     .personalRating(8f)
                     .build());
@@ -66,10 +66,10 @@ public class LoadDatabase {
                     .releaseDate(LocalDate.of(2017, 12, 11))
                     .budget(35_000_000)
                     .boxOffice(47_158_342)
+                    .description(description3)
+                    .trailerUrl("https://www.youtube.com/embed/xNsiQMeSvMk")
                     .imdbRating(7.40f)
                     .votes(146_338)
-                    .trailerUrl("https://www.youtube.com/embed/xNsiQMeSvMk")
-                    .description(description3)
                     .review(review3)
                     .personalRating(8f)
                     .build());
@@ -80,10 +80,10 @@ public class LoadDatabase {
                     .releaseDate(LocalDate.of(2007, 5, 19))
                     .budget(25_000_000)
                     .boxOffice(171_627_166)
+                    .description(description4)
+                    .trailerUrl("https://www.youtube.com/embed/38A__WT3-o0")
                     .imdbRating(8.20f)
                     .votes(1_067_391)
-                    .trailerUrl("https://www.youtube.com/embed/38A__WT3-o0")
-                    .description(description4)
                     .review(review4)
                     .personalRating(10f)
                     .build());
@@ -177,10 +177,64 @@ public class LoadDatabase {
             );
 
             repository.save(Movie.builder()
-                    .title("The Lord of the Rings: The Two Towers")
-                    .releaseDate(LocalDate.of(2002, 12, 5))
-                    .imdbRating(8.8f)
-                    .votes(1_793_945)
+                    .title("The Bikeriders")
+                    .releaseDate(LocalDate.of(2024, 6, 21))
+                    .build()
+            );
+
+            repository.save(Movie.builder()
+                    .title("The Exorcism")
+                    .releaseDate(LocalDate.of(2024, 6, 21))
+                    .build()
+            );
+
+
+            repository.save(Movie.builder()
+                    .title("Something in the Water")
+                    .releaseDate(LocalDate.of(2024, 6, 21))
+                    .build()
+            );
+
+            repository.save(Movie.builder()
+                    .title("Kalki 2898-AD")
+                    .releaseDate(LocalDate.of(2024, 6, 27))
+                    .build()
+            );
+
+
+            repository.save(Movie.builder()
+                    .title("Kinds of Kindness")
+                    .releaseDate(LocalDate.of(2024, 6, 28))
+                    .build()
+            );
+
+            repository.save(Movie.builder()
+                    .title("Horizon: An American Saga - Chapter 1")
+                    .releaseDate(LocalDate.of(2024, 6, 28))
+                    .build()
+            );
+
+            repository.save(Movie.builder()
+                    .title("A Quiet Place: Day One")
+                    .releaseDate(LocalDate.of(2024, 6, 28))
+                    .build()
+            );
+
+            repository.save(Movie.builder()
+                    .title("MaXXXine")
+                    .releaseDate(LocalDate.of(2024, 7, 5))
+                    .build()
+            );
+
+            repository.save(Movie.builder()
+                    .title("Kill")
+                    .releaseDate(LocalDate.of(2024, 7, 5))
+                    .build()
+            );
+
+            repository.save(Movie.builder()
+                    .title("Unicorns")
+                    .releaseDate(LocalDate.of(2024, 7, 5))
                     .build()
             );
         };
@@ -196,37 +250,37 @@ public class LoadDatabase {
 
             newsRepository.save(News.builder()
                     .title("\"Inside Out 2\" Set for Record-Breaking Box Office Debut")
-                    .content(content1)
+                    .coverImageUrl("/images/news/inside_out_2/cover.jpg")
                     .publicationDate(LocalDate.of(2024, 6, 15))
-                    .coverImageUrl("/images/news/inside-out-2-cover.jpg")
-                    .contentImageUrl("/images/news/inside-out-2-content.jpg")
+                    .contentImageUrl("/images/news/inside_out_2/content.jpg")
+                    .content(content1)
                     .source("Variety")
                     .build());
 
             newsRepository.save(News.builder()
                     .title("Martin Scorsese to Explore Ancient Shipwrecks and Sicilian Heritage in New Documentary")
-                    .content(content2)
+                    .coverImageUrl("/images/news/martin_scorsese/cover.jpg")
                     .publicationDate(LocalDate.of(2024, 6, 16))
-                    .coverImageUrl("/images/news/martin-scorsese-cover.jpg")
-                    .contentImageUrl("/images/news/martin-scorsese-content.jpg")
+                    .contentImageUrl("/images/news/martin_scorsese/content.jpg")
+                    .content(content2)
                     .source("Variety")
                     .build());
 
             newsRepository.save(News.builder()
                     .title("Shanghai Film Festival Red Carpet Shines with International Stars and Local Talent")
-                    .content(content3)
+                    .coverImageUrl("/images/news/shanghai_film_festival/cover.jpg")
                     .publicationDate(LocalDate.of(2024, 6, 15))
-                    .coverImageUrl("/images/news/shanghai-film-festival-cover.jpg")
-                    .contentImageUrl("/images/news/shanghai-film-festival-content.jpg")
+                    .contentImageUrl("/images/news/shanghai_film_festival/content.jpg")
+                    .content(content3)
                     .source("Variety")
                     .build());
 
             newsRepository.save(News.builder()
                     .title("Quentin Tarantino Reflects on Working with Robert De Niro in 'Jackie Brown")
-                    .content(content3)
+                    .coverImageUrl("/images/news/quentin_tarantino_robert_de_niro/cover.jpg")
                     .publicationDate(LocalDate.of(2024, 6, 14))
-                    .coverImageUrl("/images/news/quentin-tarantino-robert-de-niro-cover.jpg")
-                    .contentImageUrl("/images/news/quentin-tarantino-robert-de-niro-content.jpg")
+                    .contentImageUrl("/images/news/quentin_tarantino_robert_de_niro/content.jpg")
+                    .content(content4)
                     .source("Variety")
                     .build());
         };
