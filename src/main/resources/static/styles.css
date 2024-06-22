@@ -3,8 +3,6 @@ body {
   margin: 20px;
   font-family: 'Times New Roman', Times, serif;
   padding: 20px;
-  text-align: justify;
-  text-justify: inter-word;
   font-size: 18px;
   line-height: 1.6;
 }
@@ -230,8 +228,6 @@ iframe {
 }
 
 p {
-  text-align: justify;
-  text-justify: inter-word;
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px;
