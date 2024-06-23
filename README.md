@@ -1,45 +1,20 @@
-Herman Lazarchyk
-
 # Cine World
 
-Welcome to Cine World, a comprehensive platform for movie enthusiasts. This project was realized as part of the "Programming for the Web" course during the 2023 - 2024 academic year. It builds upon a previous school project developed on the **[Code.org](https://codeprojects.org/projects/weblab/oWZ1sXb3rGhatqboFaIh56AwPL4HncKjDDGfZTJVnk8/)** platform. The original project consisted solely of the frontend component, which has now been extended to include a fully functional backend, offering a more complete and robust application.
-
-Cine World offers a variety of functionalities including movie reviews, the latest news, movie ratings, and upcoming premieres. Users can also share the project via a QR code linking to the GitHub repository. The project aims to provide a comprehensive and user-friendly interface for movie lovers to explore and share information about their favorite films.
+Welcome to Cine World, a comprehensive platform for movie enthusiasts. This project was realized as part of the "Programming for the Web" course during the 2023 - 2024 academic year. It builds upon a previous school project developed on the **[Code.org](https://codeprojects.org/projects/weblab/oWZ1sXb3rGhatqboFaIh56AwPL4HncKjDDGfZTJVnk8/)** platform. The original project consisted solely of the frontend component, which has now been extended to include a fully functional backend, offering a more complete and robust application. The frontend was also enhanced to provide a better user experience.
 
 ## Technologies Used
 
-- **[Java](https://www.java.com)**
-    - A high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.
-
-- **[Lombok](https://projectlombok.org)**
-    - A Java library that automatically plugs into your editor and build tools, removing the boilerplate code by generating getters, setters, constructors, and more.
-
-- **[Spring Boot](https://spring.io/projects/spring-boot)**
-    - An open-source, microservice-based framework that makes it easy to create stand-alone, production-grade Spring-based applications.
-
-- **[Hibernate](https://hibernate.org)**
-    - An object-relational mapping tool for the Java programming language. It provides a framework for mapping an object-oriented domain model to a relational database.
-
-- **[H2 Database](https://www.h2database.com)**
-    - An open-source lightweight Java database. It can be embedded in Java applications or run in client-server mode.
-
-- **[Gradle](https://gradle.org)**
-    - An open-source build automation tool that is designed to be flexible enough to build almost any type of software.
-
-- **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)**
-    - The latest evolution of the standard that defines HTML. HTML5 includes detailed processing models to encourage more interoperable implementations.
-
-- **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)**
-    - The latest version of the Cascading Style Sheets language. CSS3 is divided into modules, making it easier to learn and use.
-
-- **[Thymeleaf](https://www.thymeleaf.org)**
-    - A modern server-side Java template engine for web and standalone environments capable of processing HTML, XML, JavaScript, CSS, and text.
-
-- **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)**
-    - A programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm.
-
-- **[jQuery](https://jquery.com)**
-    - A fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, and animation much simpler.
+- **[Java](https://www.java.com)** - A high-level, class-based, object-oriented programming language.
+- **[Lombok](https://projectlombok.org)** - A Java library that automates the generation of boilerplate code like getters, setters, and constructors.
+- **[Spring Boot](https://spring.io/projects/spring-boot)** - A framework for building stand-alone, production-grade Spring-based applications.
+- **[Hibernate](https://hibernate.org)** - An ORM tool for mapping Java objects to a relational database.
+- **[H2 Database](https://www.h2database.com)** - An open-source lightweight Java database.
+- **[Gradle](https://gradle.org)** - An open-source build automation tool.
+- **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)** - The latest version of the HTML standard.
+- **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)** - The latest version of the CSS standard.
+- **[Thymeleaf](https://www.thymeleaf.org)** - A modern server-side Java template engine for web applications.
+- **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** - A high-level, just-in-time compiled, multi-paradigm programming language.
+- **[jQuery](https://jquery.com)** - A fast, small, and feature-rich JavaScript library.
 
 ## Functionalities
 
@@ -64,7 +39,7 @@ Cine World offers a variety of functionalities including movie reviews, the late
 
 6. **QR Code for Sharing**
     - Provides a QR code for users to share the project on GitHub.
-    - Facilitates easy access to the project repository for collaboration and contributions.
+    - Facilitates easy access to the project repository.
 
 ## Getting Started
 
@@ -102,30 +77,14 @@ To get a local copy up and running follow these simple steps:
 
 ## Usage
 
-Once the application is running, you can navigate to the following URLs to access different functionalities:
+Once the application is running, you can navigate to **[localhost:8080](http://localhost:8080)** to access the main website. Here are the specific URLs for different functionalities:
 
-- `/reviews` - To view movie reviews.
-- `/news` - To read the latest movie news.
-- `/rating` - To see the movie ratings.
-- `/premieres` - To check out upcoming movie premieres.
-- `/share` - To share the project via QR code.
-
-The website will be available on **[localhost:8080](http://localhost:8080)**. Open this link in your web browser to view the site.
+- **[Movie Reviews](http://localhost:8080/reviews)** - Browse detailed reviews of various movies.
+- **[Latest News](http://localhost:8080/news)** - Stay updated with the latest news in the movie industry.
+- **[Movie Ratings](http://localhost:8080/rating)** - View movie ratings based on user reviews and votes.
+- **[Upcoming Premieres](http://localhost:8080/premieres)** - Check out the release dates of upcoming movies.
+- **[Share](http://localhost:8080/share)** - Share the Cine World project via a QR code that links to the GitHub repository.
 
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
-
-## Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## Contact
-
-For any inquiries, please reach out to @Herman0802.
